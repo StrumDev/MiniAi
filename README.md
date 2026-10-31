@@ -62,8 +62,6 @@ MiniAi/
 └── src/              source code
 ```
 
-The code is written in C# style: braces on a new line, and every file does exactly one task. The main modules:
-
 | Module | Purpose |
 |---|---|
 | `Main.c`, `Console.c`, `Commands.c` | startup, the console loop, commands |
