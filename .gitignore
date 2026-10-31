@@ -1,0 +1,20 @@
+# Built program
+MiniAi
+MiniAi.exe
+
+# Trained model (created by /teach)
+model.bin
+model.bin.tmp
+
+# Object files and build leftovers
+*.o
+*.obj
+*.exe
+*.out
+
+# Editor and system files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

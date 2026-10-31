@@ -1,0 +1,84 @@
+# Number of GRU layers (changes the architecture)
+Layers: 2
+
+# Hidden layer size (changes the architecture)
+Hidden: 128
+
+# Character embedding size (changes the architecture)
+Embedding: 32
+
+# Max sequence length in bytes (question + answer, or one pretraining text window)
+MaxLength: 256
+
+# Number of threads (0 = all CPU cores)
+Threads: 0
+
+# Random seed (0 = new seed every run)
+Seed: 1234
+
+# Pretraining: step between text windows in bytes (0 = same as MaxLength, no overlap)
+WindowStride: 128
+
+# Pretraining: number of epochs
+PretrainEpochs: 300
+
+# Pretraining: mini-batch size
+PretrainBatchSize: 2
+
+# Pretraining: learning rate (Adam)
+PretrainLearningRate: 0.003
+
+# Pretraining: learning rate multiplier applied after every epoch
+PretrainLearningDecay: 1
+
+# Fine-tuning: number of epochs
+FinetuneEpochs: 80
+
+# Fine-tuning: mini-batch size
+FinetuneBatchSize: 4
+
+# Fine-tuning: learning rate (Adam)
+FinetuneLearningRate: 0.005
+
+# Fine-tuning: learning rate multiplier applied after every epoch (lets the model settle)
+FinetuneLearningDecay: 0.96
+
+# Fine-tuning: extra copies of every pair with a damaged question - dropped word, typo (0 = off)
+FinetuneAugment: 3
+
+# Gradient norm clipping (0 = disabled)
+ClipNorm: 1
+
+# Weight regularization (weight decay)
+WeightDecay: 0
+
+# Loss weight on question characters (0 = learn answers only)
+QuestionWeight: 0
+
+# Dropout between GRU layers while training (0 = off; fights memorizing on small data)
+Dropout: 0.05
+
+# Share of examples held out for validation (0 = none; a question is held out together with its augmented copies)
+ValidationSplit: 0.02
+
+# Early stopping: stop after this many epochs without validation improvement and keep the best model (0 = off; needs ValidationSplit above 0)
+Patience: 0
+
+# Questions: 1 = lowercase and strip punctuation, in training and in chat (0 = keep as typed)
+Normalize: 1
+
+# Chat history: 1 = remember the exchanges of the chat and give the newest ones to the model as context; fine-tuning then also trains with random context, so run /teach finetune after changing it (0 = off)
+ChatHistory: 0
+
+# Chat history: how many of the newest exchanges the model gets as context (also limited by 3/4 of MaxLength bytes)
+ChatHistoryTurns: 3
+
+# Max answer length in bytes
+MaxAnswer: 200
+
+# Sampling temperature (0 = always the most likely character)
+Temperature: 1
+
+# Top-K: how many best characters to consider (0 = all)
+TopK: 8
+
