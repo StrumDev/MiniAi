@@ -124,7 +124,7 @@ Files are processed in alphabetical order. Other files in the folder (for exampl
 
 Pretraining windows never cross from one `.pre` file into the next. A long text is cut into windows of `MaxLength` bytes with a step of `WindowStride`.
 
-The language of the data is up to you: any UTF-8 text works. The sample dataset shipped in `training` is in Ukrainian.
+The language of the data is up to you: any UTF-8 text works.
 
 ## The `.fin` format
 
