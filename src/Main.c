@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
-#include "Config.h"
-#include "Console.h"
-#include "Context.h"
-#include "FileList.h"
-#include "Locator.h"
-#include "ModelStorage.h"
+#include "config/Config.h"
+#include "console/Console.h"
+#include "config/Context.h"
+#include "storage/FileList.h"
+#include "storage/Locator.h"
+#include "storage/ModelStorage.h"
 
 #ifdef _WIN32
 #include <windows.h>

@@ -2,16 +2,18 @@ CC = clang
 
 ifeq ($(OS),Windows_NT)
     PROGRAM = MiniAi.exe
-    FLAGS = -std=gnu11 -O2 -s
+    FLAGS = -std=gnu11 -O2 -s -Isrc
     LIBRARIES =
 else
     PROGRAM = MiniAi
-    FLAGS = -std=gnu11 -O2 -s -pthread
+    FLAGS = -std=gnu11 -O2 -s -Isrc -pthread
     LIBRARIES = -lm
 endif
 
-.PHONY: run
+.PHONY: build run
 
-run:
-	@$(CC) $(FLAGS) $(wildcard src/*.c) -o $(PROGRAM) $(LIBRARIES)
+build:
+	@$(CC) $(FLAGS) $(wildcard src/*.c) $(wildcard src/*/*.c) -o $(PROGRAM) $(LIBRARIES)
+
+run: build
 	@./$(PROGRAM)
